@@ -1,0 +1,56 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"format": "uuid"
+		},
+		"project": {
+			"type": "string",
+			"format": "uuid"
+		},
+		"category": {
+			"type": "string",
+			"enum": [
+				"task",
+				"research",
+				"private"
+			]
+		},
+		"fields": {
+			"type": "array",
+			"items": {
+				
+			}
+		},
+		"match_params": {
+			"type": "object"
+		},
+		"gc_config": {
+			"type": "object",
+			"properties": {
+				"url": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"url"
+			]
+		},
+		"regex": {
+			"type": "string",
+			"maxLength": 2048
+		},
+		"created_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"updated_at": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"regex"
+	]
+}

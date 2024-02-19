@@ -1,0 +1,138 @@
+{
+	"type": "object",
+	"properties": {
+		"count": {
+			"type": "integer"
+		},
+		"page_size": {
+			"type": "integer"
+		},
+		"current_page": {
+			"type": "integer"
+		},
+		"total_pages": {
+			"type": "integer"
+		},
+		"next": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"previous": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"results": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string",
+							"format": "uuid"
+						},
+						"project": {
+							"type": "string",
+							"format": "uuid"
+						},
+						"category": {
+							"type": "string",
+							"enum": [
+								"task",
+								"research",
+								"private"
+							]
+						},
+						"fields": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object"
+								}
+							]
+						},
+						"match_params": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object"
+								}
+							]
+						},
+						"gc_config": {
+							"type": "object"
+						},
+						"regex": {
+							"type": "string",
+							"maxLength": 2048
+						},
+						"created_at": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updated_at": {
+							"type": "string",
+							"format": "date-time"
+						}
+					}
+				},
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string",
+							"format": "uuid"
+						},
+						"project": {
+							"type": "string",
+							"format": "uuid"
+						},
+						"category": {
+							"type": "string",
+							"enum": [
+								"task",
+								"research",
+								"private"
+							]
+						},
+						"fields": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object"
+								}
+							]
+						},
+						"match_params": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object"
+								}
+							]
+						},
+						"gc_config": {
+							"type": "object"
+						},
+						"regex": {
+							"type": "string",
+							"maxLength": 2048
+						},
+						"created_at": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updated_at": {
+							"type": "string",
+							"format": "date-time"
+						}
+					}
+				}
+			]
+		}
+	}
+}

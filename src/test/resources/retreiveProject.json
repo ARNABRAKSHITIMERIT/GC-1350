@@ -1,0 +1,157 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "string",
+			"format": "uuid"
+		},
+		"status": {
+			"type": "string",
+			"enum": [
+				"draft",
+				"in-progress",
+				"completed",
+				"canceled"
+			]
+		},
+		"name": {
+			"type": "string",
+			"maxLength": 256
+		},
+		"description": {
+			"type": "string"
+		},
+		"platform": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"ext_platform_id": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"organization": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"participants": {
+			"type": "array",
+			"items": {
+				
+			}
+		},
+		"metrics": {
+			"type": "object",
+			"properties": {
+				"item_count": {
+					"type": "integer"
+				},
+				"approved_task_count": {
+					"type": "integer"
+				},
+				"task_count": {
+					"type": "integer"
+				},
+				"annotation_count": {
+					"type": "integer"
+				},
+				"worked_time": {
+					"type": "integer"
+				}
+			},
+			"required": [
+				"item_count",
+				"approved_task_count",
+				"task_count",
+				"annotation_count",
+				"worked_time"
+			]
+		},
+		"started_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"completed_at": {
+			"type": [
+				"string",
+				"null"
+			],
+			"format": "date-time"
+		},
+		"canceled_at": {
+			"type": [
+				"string",
+				"null"
+			],
+			"format": "date-time"
+		},
+		"canceled_reason": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"google_webhook_url": {
+			"type": "string",
+			"format": "uri",
+			"maxLength": 2048
+		},
+		"ui_config": {
+			"type": "object",
+			"properties": {
+				"summary": {
+					"type": "string"
+				},
+				"task_count": {
+					"type": "string"
+				},
+				"average_time_per_task": {
+					"type": "string"
+				},
+				"top_research_website": {
+					"type": "string"
+				},
+				"experience_curve": {
+					"type": "string"
+				},
+				"idle_curve": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"summary",
+				"task_count",
+				"average_time_per_task",
+				"top_research_website",
+				"experience_curve",
+				"idle_curve"
+			]
+		},
+		"form_spec": {
+			"type": "object"
+		},
+		"dashboard_id": {
+			"type": "string",
+			"maxLength": 36
+		},
+		"created_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"updated_at": {
+			"type": "string",
+			"format": "date-time"
+		}
+	},
+	"required": [
+		"id",
+		"name",
+		"description",
+		"ui_config"
+	]
+}

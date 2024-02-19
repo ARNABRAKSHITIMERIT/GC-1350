@@ -1,0 +1,248 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"task": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"url": {
+			"type": "string"
+		},
+		"reporter": {
+			"type": "object",
+			"properties": {
+				"username": {
+					"type": "string"
+				},
+				"photo": {
+					"type": "string"
+				},
+				"role": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"username",
+				"photo",
+				"role"
+			]
+		},
+		"assignee": {
+			"type": [
+				"string",
+				"null"
+			]
+		},
+		"watchers": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"first_name": {
+							"type": "string"
+						},
+						"last_name": {
+							"type": "string"
+						},
+						"username": {
+							"type": "string"
+						}
+					},
+					"required": [
+						"id",
+						"first_name",
+						"last_name",
+						"username"
+					]
+				}
+			]
+		},
+		"solution": {
+			"type": "null"
+		},
+		"status": {
+			"type": "string"
+		},
+		"category": {
+			"type": "null"
+		},
+		"description": {
+			"type": "string"
+		},
+		"screenshot": {
+			"type": "string"
+		},
+		"escalation": {
+			"type": "string"
+		},
+		"organization": {
+			"type": "null"
+		},
+		"project": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"organization": {
+					"type": "null"
+				}
+			},
+			"required": [
+				"id",
+				"name",
+				"organization"
+			]
+		},
+		"events": {
+			"type": "array",
+			"items": [
+				{
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"issue": {
+							"type": "integer"
+						},
+						"author": {
+							"type": "object",
+							"properties": {
+								"photo": {
+									"type": "string"
+								},
+								"username": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"photo",
+								"username"
+							]
+						},
+						"event": {
+							"type": "string"
+						},
+						"detail": {
+							"type": "object"
+						},
+						"created_at": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"updated_at": {
+							"type": "string",
+							"format": "date-time"
+						}
+					},
+					"required": [
+						"id",
+						"issue",
+						"author",
+						"event",
+						"detail",
+						"created_at",
+						"updated_at"
+					]
+				}
+			]
+		},
+		"reported_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"updated_at": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"filters": {
+			"type": "object",
+			"properties": {
+				"assignee": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"username": {
+									"type": "string"
+								},
+								"role": {
+									"type": "string"
+								},
+								"photo": {
+									"type": "string"
+								}
+							},
+							"required": [
+								"username",
+								"role",
+								"photo"
+							]
+						}
+					]
+				},
+				"category": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						}
+					]
+				},
+				"escalation": {
+					"type": "array",
+					"items": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "string"
+						},
+						{
+							"type": "string"
+						}
+					]
+				}
+			},
+			"required": [
+				"assignee",
+				"category",
+				"escalation"
+			]
+		}
+	},
+	"required": [
+		"id",
+		"task",
+		"url",
+		"reporter",
+		"assignee",
+		"watchers",
+		"solution",
+		"status",
+		"category",
+		"description",
+		"screenshot",
+		"escalation",
+		"organization",
+		"project",
+		"events",
+		"reported_at",
+		"updated_at",
+		"filters"
+	]
+}

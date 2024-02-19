@@ -1,0 +1,109 @@
+{
+	"type": "object",
+	"properties": {
+		"urlconfig": {
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"project": {
+					"type": "string",
+					"format": "uuid"
+				},
+				"category": {
+					"type": "string",
+					"enum": [
+						"task",
+						"research",
+						"private"
+					]
+				},
+				"fields": {
+					"type": "array",
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"source": {
+									"type": "string"
+								},
+								"default": {
+									"type": "null"
+								},
+								"source_name": {
+									"type": "string"
+								}
+							}
+						}
+					]
+				},
+				"match_params": {
+					"type": "object"
+				},
+				"gc_config": {
+					"type": "object",
+					"properties": {
+						"url": {
+							"type": "string"
+						},
+						"fields": {
+							"type": "array",
+							"items": [
+								{
+									"type": "object",
+									"properties": {
+										"left": {
+											"type": "integer"
+										},
+										"color": {
+											"type": "string"
+										},
+										"endAt": {
+											"type": "integer"
+										},
+										"width": {
+											"type": "number"
+										},
+										"height": {
+											"type": "number"
+										},
+										"startAt": {
+											"type": "integer"
+										}
+									}
+								}
+							]
+						}
+					}
+				},
+				"regex": {
+					"type": "string"
+				},
+				"created_at": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"updated_at": {
+					"type": "string",
+					"format": "date-time"
+				}
+			}
+		},
+		"parsed_fields": {
+			"type": "object",
+			"properties": {
+				"category": {
+					"type": "string"
+				},
+				"Number": {
+					"type": "null"
+				}
+			}
+		}
+	}
+}
